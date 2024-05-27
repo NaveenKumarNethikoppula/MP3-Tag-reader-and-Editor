@@ -3,7 +3,7 @@ The MP3 tag reader is a software which will read and display MP3 (ID3) tag infor
 
 Implemented as a command line application, this should be able to handle some operations on the MP3 tags as called out below. 
 
-A Brief Introduction to ID3 Standard and Tags
+A Brief Introduction to ID3 Standard and Tags :
 
 ID3 is a metadata container most often used in conjunction with the MP3 audio file format. It allows information such as the title, artist, album, track number, and other information about the file to be stored in the file itself. There are two unrelated versions of ID3: ID3v1 and ID3v2. You will have to first detect the ID3 version before getting the tag details.
 
@@ -11,13 +11,14 @@ Total 128 bytes used for storing this metadata. If you one sum the size of all t
 
 An ID3v2 tag starts with a tag header followed by one or more frames. Each frame in turn consists of a header and (usually) some kind of content. The ID3v2 tag is more flexible and hence more difficult to work with. An ID3v2 tag has a signature code of “ID3x” where x is the sub-version number of the tag. Typically, ID3v2 tags are found at the beginning of an MP3 file, but this is not an absolute restriction. What happens next depends on the subversion of the ID3v2 tag. As far as we can tell, there have been three versions so far: 2,3 and 4. Some important details about the headers are given below.  
 
-ID3v2 Frame header: 
+ID3v2 Frame header:-
 
 ID3v2/file identifier “ID3” 
 ID3v2 version $03 00 (2, 3 or 4) 
 ID3v2 flags %abc00000 
 ID3v2 size 4 * %0xxxxxxx (Total size of ID3 tag) 
-ID3v2.2 Frame header:
+
+ID3v2.2 Frame header:-
 
 Frame ID $xx xx xx(Three characters) [e.g.: TAL Album / Movie / Show title]
 TOA Original artist(s) / performer(s) 
@@ -28,10 +29,12 @@ Frame ID $xx xx xx xx (Four characters) [e.g.: TAL Album/Movie/Show title]
 TIT2 Title / song name /content description 
 Size $xx xx xx xx (Four Characters)
 Flags $xx xx
-Requirement Details
+
+Requirement Details :-
 Here is the list of requirements that your MP3 tag reader should be in a position to handle. 
 
-Mandatory Features:
+Mandatory Features:-
+
 This application, should be able to handle all ID3 versions (Except v2.4) tags.
 Display which version of ID3 tag is used.
 Display all the metadata information from ID3 tag.
@@ -39,7 +42,9 @@ User should be able to change tags according to options given.
 Should display a help screen on request (-h option).
 If any image embedded in file, display details about image (Type, path and size).
 If ID3 tag not found display proper error messages.
-Additional Features:
+
+Additional Features:-
+
 Add an option to extract the album art (image) from file.
 Add an option to delete all tag data from the file.
 In corporate ID3v2.4 version.
